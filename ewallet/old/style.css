@@ -1,0 +1,826 @@
+/* =======================
+   General Styles
+========================== */
+:root {
+    --primary-color: #1E3A8A; /* Deep blue */
+    --accent-color: #FFEB3B;  /* Bright yellow */
+    --background-color: #F1F5F9; /* Light background */
+    --button-hover-color: #2563EB; /* Darker blue on hover */
+    --text-color: #1F2937; /* Dark gray for text */
+}
+
+/* Global */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =======================
+   Welcome Page (index.php)
+========================== */
+.welcome-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(135deg, #1E3A8A, #2563EB);
+    color: white;
+}
+
+.brand img {
+    width: 100px;
+    margin-bottom: 1rem;
+}
+
+.brand h1 {
+    font-size: 2.5rem;
+}
+
+.brand p {
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+}
+
+.button-group {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.btn-light, .btn-dark {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.btn-light {
+    background: white;
+    color: #1E3A8A;
+    border: 2px solid white;
+}
+
+.btn-dark {
+    background: #2563EB;
+    color: white;
+    border: 2px solid #2563EB;
+}
+
+/* =======================
+   Login Page (login.php)
+========================== */
+.login-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+}
+
+.login-container form {
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.login-logo {
+    width: 80px;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* Form Inputs */
+label {
+    display: block;
+    text-align: left;
+    font-weight: bold;
+    margin-top: 1rem;
+}
+
+input[type="text"], input[type="password"], input[type="number"] {
+    width: 100%;
+    padding: 0.8rem;
+    margin-top: 0.3rem;
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* Password field with eye icon */
+.password-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-container input {
+    flex-grow: 1;
+}
+
+.password-container span {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+}
+
+/* Forgot Password */
+.forgot-password {
+    display: block;
+    text-align: right;
+    margin-top: 0.5rem;
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+/* Submit Button */
+button {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 1rem;
+    width: 100%;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+
+button:hover {
+    background: var(--button-hover-color);
+}
+
+/* Error Messages */
+.error-message {
+    color: red;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+/* =======================
+   Dashboard Styles
+========================== */
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 2rem 2rem 1rem;
+    text-align: center;
+    border-radius: 0 0 20px 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+header p {
+    font-size: 1.2rem;
+}
+
+/* Dashboard Container */
+.container {
+    max-width: 960px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 15px;
+}
+
+/* Action Buttons (Buy, Send, Request, Topup) */
+.actions {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1rem;
+}
+
+.actions button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 1rem;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.actions button:hover {
+    background-color: var(--button-hover-color);
+}
+
+/* Transactions */
+.transactions {
+    margin-top: 2rem;
+}
+
+.transactions h3 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.transaction-item {
+    background-color: #fff;
+    padding: 1rem;
+    margin-bottom: 0.8rem;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.transaction-item p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.transaction-item .amount {
+    font-weight: bold;
+}
+
+/* =======================
+   Bottom Navigation Bar
+========================== */
+nav {
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    border-radius: 20px 20px 0 0;
+    box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.1);
+}
+
+nav a {
+    color: white;
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+
+/* Logout Button */
+nav a[href="logout.php"] {
+    color: red;
+    font-weight: bold;
+}
+
+/* =======================
+   Responsive Design
+========================== */
+@media (max-width: 768px) {
+    .welcome-container {
+        padding: 4rem;
+    }
+
+    .login-container form {
+        width: 90%;
+    }
+
+    .actions {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .actions button {
+        width: 70px;
+        height: 70px;
+        font-size: 1rem;
+    }
+}
+
+/* =======================
+   Register Page (register.php)
+========================== */
+.register-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+}
+
+.register-container form {
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.register-logo {
+    width: 80px;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* Form Inputs */
+label {
+    display: block;
+    text-align: left;
+    font-weight: bold;
+    margin-top: 1rem;
+}
+
+/* Ensure both input fields have the same size and alignment */
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 0.8rem;
+    margin-top: 0.3rem;
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+    font-size: 1rem;
+    box-sizing: border-box; /* Ensures padding doesn't affect width */
+}
+
+/* Password field with eye icon (aligned with username field) */
+.password-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%; /* Ensures it matches the username field */
+}
+
+.password-container input {
+    flex-grow: 1;
+    padding-right: 2rem; /* Adds space for the eye icon */
+}
+
+.password-container span {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+}
+
+/* Submit Button */
+button {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 1rem;
+    width: 100%;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+
+button:hover {
+    background: var(--button-hover-color);
+}
+
+/* Error Messages */
+.error-message {
+    color: red;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .register-container form {
+        width: 90%;
+    }
+}
+
+/* =======================
+   Forgot & Reset Password Pages
+========================== */
+.forgot-container, .reset-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+}
+
+.forgot-container form, .reset-container form {
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* Form Inputs */
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 0.8rem;
+    margin-top: 0.3rem;
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* Submit Button */
+button {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 1rem;
+    width: 100%;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+
+button:hover {
+    background: var(--button-hover-color);
+}
+
+/* Info Message */
+.info-message {
+    color: green;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+/* ===========================
+   Dashboard Header
+============================== */
+.dashboard-header {
+    background: linear-gradient(135deg, #1E3A8A, #2563EB);
+    color: white;
+    padding: 2rem;
+    text-align: left;
+    border-radius: 0 0 20px 20px;
+}
+
+.user-info h2 {
+    font-size: 1.8rem;
+    margin-bottom: 0.3rem;
+}
+
+.premium-banner {
+    background: white;
+    color: #1E3A8A;
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+/* ===========================
+   Features Section
+============================== */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.feature-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    border: 2px solid var(--primary-color);
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+.feature-item:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+/* ===========================
+   Promo Section
+============================== */
+.promo-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.promo-item {
+    flex: 1;
+    background: var(--primary-color);
+    color: white;
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* ===========================
+   Monthly Budget Section
+============================== */
+.budget-overview {
+    background: white;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin-top: 1rem;
+}
+
+.budget-overview p {
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 0.5rem 0;
+}
+
+/* ===========================
+   Bottom Navigation
+============================== */
+.bottom-nav {
+    background: var(--primary-color);
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    border-radius: 20px 20px 0 0;
+}
+
+.nav-item {
+    color: white;
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+
+.nav-item.active {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* ===========================
+   Recent Transactions
+============================== */
+.transactions {
+    margin-top: 1rem;
+}
+
+.transaction-item {
+    background-color: #fff;
+    padding: 1rem;
+    margin-bottom: 0.8rem;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.transaction-item p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.transaction-item .amount {
+    font-weight: bold;
+}
+
+.view-all {
+    display: block;
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 1rem;
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.view-all:hover {
+    text-decoration: underline;
+}
+
+/* ===========================
+   NFC Scan Button
+============================== */
+.nfc-banner {
+    background: white;
+    color: var(--primary-color);
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 1rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+#nfc-scan {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 1rem;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#nfc-scan:hover {
+    background: var(--button-hover-color);
+}
+
+#nfc-result {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+}
+
+/* ===========================
+   Fix for Top-Up Page Input Field
+============================== */
+.topup-container {
+    max-width: 400px;
+    margin: 2rem auto;
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.topup-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.topup-container input[type="number"] {
+    width: 100%;
+    max-width: 300px;
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-top: 0.3rem;
+}
+
+.topup-container button {
+    width: 100%;
+    max-width: 300px;
+    padding: 1rem;
+    background: var(--primary-color);
+    color: white;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+.topup-container button:hover {
+    background: var(--button-hover-color);
+}
+
+/* ===========================
+   Dashboard Header (Top Bar)
+============================== */
+.dashboard-header {
+    background: white;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.2rem;
+    border-bottom: 2px solid #eee;
+}
+
+#menu-toggle, #language-select {
+    cursor: pointer;
+}
+
+/* ===========================
+   Middle Card Section (User Info)
+============================== */
+.user-card {
+    background: linear-gradient(135deg, #1E3A8A, #2563EB);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem auto;
+    max-width: 400px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.user-info h3 {
+    margin-bottom: 0.2rem;
+}
+
+.user-info p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.user-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.user-profile img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.status-circle {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-top: 5px;
+}
+
+/* ===========================
+   Features Grid
+============================== */
+.features-container {
+    margin: 1rem auto;
+    max-width: 400px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.feature-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    border: 2px solid var(--primary-color);
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+.feature-item:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+/* ===========================
+   Promo Banner Section
+============================== */
+.promo-banner {
+    background: #2563EB;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    border-radius: 10px;
+    max-width: 400px;
+    margin: 1rem auto;
+}
+
+/* ===========================
+   Bottom Navigation
+============================== */
+.bottom-nav {
+    background: var(--primary-color);
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    border-radius: 20px 20px 0 0;
+}
+
+.nav-item {
+    color: white;
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+
+.nav-item.active {
+    font-weight: bold;
+    text-decoration: underline;
+}
